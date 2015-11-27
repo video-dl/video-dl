@@ -1,0 +1,15 @@
+language: bash
+
+addons:
+  apt:
+    packages:
+    - curl
+    - grep
+    - sed
+    - youtube-dl
+
+script: "source build.sh"
+
+before_install:
+- openssl aes-256-cbc -pass "pass:$pass"
+  -in data.enc -out data -d -a
