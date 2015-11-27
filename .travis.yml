@@ -13,3 +13,7 @@ script: "source build.sh"
 before_install:
 - openssl aes-256-cbc -pass "pass:$pass"
   -in data.enc -out data -d -a
+
+branches:
+  except:
+    - master
